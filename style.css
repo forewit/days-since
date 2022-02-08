@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: steelblue;
+    text-align: center;
+  }
+  
+  #date{
+    padding-top: 10px;
+    font-family: Garamond, serif;
+  }
+
+  #time {
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  #info {
+    font-family: Garamond, serif;
+  }
