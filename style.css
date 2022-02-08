@@ -8,15 +8,21 @@
     overflow: hidden;
     background: steelblue;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
   }
   
   #date{
     padding-top: 10px;
-    font-family: Garamond, serif;
   }
 
   #time {
-    font-family: 'Courier New', Courier, monospace;
   }
 
   #info {
