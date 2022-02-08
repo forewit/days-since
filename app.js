@@ -19,6 +19,8 @@ function update() {
         // convert to 12 hour time
         if (now.getHours() > 12) {
             timeElm.innerHTML = `${now.getHours() - 12} ${now.getMinutes()} pm`;
+        } else if (now.getHours() == 12) {
+            timeElm.innerHTML = `${now.getHours()} ${now.getMinutes()} pm`;
         } else {
             timeElm.innerHTML = `${now.getHours()} ${now.getMinutes()} am`;
         }
@@ -27,6 +29,8 @@ function update() {
         // convert to 12 hour time
         if (now.getHours() > 12) {
             timeElm.innerHTML = `${now.getHours() - 12}:${now.getMinutes()} pm`;
+        } else if (now.getHours() == 12) {
+            timeElm.innerHTML = `${now.getHours()}:${now.getMinutes()} pm`;
         } else {
             timeElm.innerHTML = `${now.getHours()}:${now.getMinutes()} am`;
         } 
