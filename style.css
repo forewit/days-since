@@ -6,7 +6,8 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: steelblue;
+    background: #3aa794;
+    color: #fff;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
   }
@@ -18,13 +19,6 @@
     transform: translate(-50%, -40%);
   }
   
-  #date{
-    padding-top: 10px;
-  }
-
-  #time {
-  }
-
   #info {
     font-family: Garamond, serif;
   }

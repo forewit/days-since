@@ -36,3 +36,23 @@ function update() {
 
 update();
 var interval = setInterval(update, 1000);
+
+document.onclick = function() {
+    let newElm = document.createElement("p");
+    newElm.innerHTML = "15 days to slow the spread";
+    newElm.style.opacity = 0;
+    newElm.style.position = "absolute";
+    newElm.style.transition = "opacity 1s ease-in-out";
+    newElm.style.top = `${Math.random() * window.innerHeight}px`;
+    newElm.style.left = `${Math.random() * window.innerWidth}px`;
+    newElm.style.fontSize = "1.5em";
+    document.body.appendChild(newElm);
+
+    // animate newElm to fade out
+    setTimeout(function() {
+        newElm.style.opacity = 1;
+        setTimeout(function() {
+            newElm.style.opacity = 0;
+        }, 2000);
+    }, 10);
+}
