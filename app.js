@@ -37,22 +37,25 @@ function update() {
 update();
 var interval = setInterval(update, 1000);
 
-document.onclick = function() {
-    let newElm = document.createElement("p");
+document.onmouseenter = function() {
+    let newElm = document.createElement("h1");
     newElm.innerHTML = "15 days to slow the spread";
     newElm.style.opacity = 0;
     newElm.style.position = "absolute";
     newElm.style.transition = "opacity 1s ease-in-out";
-    newElm.style.top = `${Math.random() * window.innerHeight}px`;
-    newElm.style.left = `${Math.random() * window.innerWidth}px`;
+    newElm.style.top = `${Math.random() * (window.innerHeight-80)}px`;
+    newElm.style.left = `${Math.random() * (window.innerWidth-400)}px`;
     newElm.style.fontSize = "1.5em";
     document.body.appendChild(newElm);
 
     // animate newElm to fade out
     setTimeout(function() {
-        newElm.style.opacity = 1;
+        newElm.style.opacity = .2;
         setTimeout(function() {
             newElm.style.opacity = 0;
+            setTimeout(function() {
+                newElm.remove();
+            }, 2000);
         }, 2000);
     }, 10);
 }
