@@ -15,25 +15,15 @@ function update() {
     document.title = `March ${day}th`;
     dateElm.innerHTML = `March ${day}th`;
 
+    let minutes = now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+    let hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
+    let ampm = now.getHours() >= 12 ? "pm" : "am";
+
     if (tick == 0) {
-        // convert to 12 hour time
-        if (now.getHours() > 12) {
-            timeElm.innerHTML = `${now.getHours() - 12} ${now.getMinutes()} pm`;
-        } else if (now.getHours() == 12) {
-            timeElm.innerHTML = `${now.getHours()} ${now.getMinutes()} pm`;
-        } else {
-            timeElm.innerHTML = `${now.getHours()} ${now.getMinutes()} am`;
-        }
+        timeElm.innerHTML = `${hours}:${minutes} ${ampm}`;
         tick++;
     } else {
-        // convert to 12 hour time
-        if (now.getHours() > 12) {
-            timeElm.innerHTML = `${now.getHours() - 12}:${now.getMinutes()} pm`;
-        } else if (now.getHours() == 12) {
-            timeElm.innerHTML = `${now.getHours()}:${now.getMinutes()} pm`;
-        } else {
-            timeElm.innerHTML = `${now.getHours()}:${now.getMinutes()} am`;
-        } 
+        timeElm.innerHTML = `${hours} ${minutes} ${ampm}`;
         tick = 0;
     }
 }
@@ -41,7 +31,8 @@ function update() {
 update();
 var interval = setInterval(update, 1000);
 
-document.onmouseenter = function() {
+
+function message() {
     let newElm = document.createElement("h1");
     newElm.innerHTML = "15 days to slow the spread";
     newElm.style.opacity = 0;
@@ -63,3 +54,7 @@ document.onmouseenter = function() {
         }, 2000);
     }, 10);
 }
+
+document.onmouseenter = message;
+document.onclick = message;
+document.ontouchstart = message;
